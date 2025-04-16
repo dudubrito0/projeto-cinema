@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Venda de Ingressos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .navbar-vermelha {
+      background-color: #c0392b;
+    }
+
+    .navbar-vermelha .nav-link,
+    .navbar-vermelha .navbar-brand {
+      color: white;
+    }
+
+    .navbar-vermelha .nav-link:hover {
+      background-color: #a93226;
+      border-radius: 4px;
+    }
+
+    .bg-vermelho {
+      background-color: #c0392b !important;
+      color: white;
+    }
+
+    @media (max-width: 991px) {
+      .lado-a-lado {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-vermelha mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🎬 Movie Donald</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="cadastro-filmes.html">Cadastro de Filmes</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro-salas.html">Cadastro de Salas</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro-sessoes.html">Cadastro de Sessões</a></li>
+          <li class="nav-item"><a class="nav-link" href="venda-ingressos.html">Venda de Ingressos</a></li>
+          <li class="nav-item"><a class="nav-link" href="sessoes.html">Sessões Disponíveis</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conteúdo -->
+  <div class="container">
+    <div class="d-flex gap-4 lado-a-lado flex-wrap">
+
+      <!-- Formulário de Venda -->
+      <div class="card shadow-sm flex-fill" style="min-width: 350px; max-width: 48%;">
+        <div class="card-header bg-vermelho">
+          <h5 class="mb-0">Venda de Ingressos</h5>
+        </div>
+        <div class="card-body">
+          <div id="alerta" class="alert alert-success d-none" role="alert">
+            Ingresso vendido com sucesso!
+          </div>
+          <form id="form-ingresso">
+            <div class="mb-3">
+              <label for="sessao-ingresso" class="form-label">Sessão</label>
+              <select class="form-select" id="sessao-ingresso" required>
+                <option value="">Selecione a sessão</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome do Cliente</label>
+              <input type="text" class="form-control" id="nome" required />
+            </div>
+            <div class="mb-3">
+              <label for="cpf" class="form-label">CPF</label>
+              <input type="text" class="form-control" id="cpf" maxlength="14" placeholder="000.000.000-00" required />
+            </div>
+            <div class="mb-3">
+              <label for="assento" class="form-label">Assento (ex: A10)</label>
+              <input type="text" class="form-control" id="assento" required />
+            </div>
+            <div class="mb-3">
+              <label for="pagamento" class="form-label">Tipo de Pagamento</label>
+              <select class="form-select" id="pagamento" required>
+                <option value="">Selecione</option>
+                <option>Cartão</option>
+                <option>Pix</option>
+                <option>Dinheiro</option>
+              </select>
+            </div>
+            <div class="text-end">
+              <button type="submit" class="btn btn-danger">Confirmar Venda</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tabela de Ingressos -->
+      <div class="card shadow-sm flex-fill" style="min-width: 350px; max-width: 48%;">
+        <div class="card-header bg-black text-white">
+          <h5 class="mb-0">Ingressos Vendidos</h5>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-striped" id="tabela-ingressos">
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>CPF</th>
+                  <th>Assento</th>
+                  <th>Pagamento</th>
+                  <th>Sessão</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/ingressos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

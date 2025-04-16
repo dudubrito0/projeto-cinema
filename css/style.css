@@ -1,0 +1,71 @@
+.card {
+    border: none;
+    border-radius: 1rem;
+    transition: transform 0.2s ease;
+  }
+  
+  body {
+    background-color: #f8f9fa;
+    color: #252525;
+  }
+  
+  .card-filme:hover {
+    transform: scale(1.08);
+  }
+  
+  .card-img-top {
+    height: 400px;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  
+  .card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .card-text {
+    font-size: 0.95rem;
+    color: #000000;
+  }
+  
+  .card ul {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  /* Estiliza os botões do menu */
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px; /* barra branca entre eles */
+    background-color: #b02a37;
+    border-bottom: 1px solid white;
+  }
+  
+  /* Remove o hover escuro para manter o visual limpo */
+  .sidebar a:hover {
+    background-color: #8a1f2a;
+    border-radius: 0;
+  }
+  
+  /* Título da seção */
+  .titulo-filmes {
+    background-color: #b02a37;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    display: block;
+  }
+  .poster-filme {
+    width: 100%;         /* Ocupa toda a largura do card ou coluna */
+    max-height: 300px;   /* Define uma altura padrão */
+    object-fit: cover;   /* Corta a imagem para caber sem distorcer */
+    border-radius: 8px;  /* (opcional) deixa os cantos arredondados */
+  }
